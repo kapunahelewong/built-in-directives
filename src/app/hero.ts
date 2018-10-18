@@ -4,16 +4,16 @@ export class Hero {
   static heroes: Hero[] = [
     new Hero(
       null,
-      'Hercules',
-      'happy',
+      'Teapot',
+      'short and stout',
       new Date(1970, 1, 25),
       'http://www.imdb.com/title/tt0065832/',
       325
     ),
-    new Hero(1, 'Mr. Nice',  'happy'),
-    new Hero(2, 'Narco',     'sad' ),
-    new Hero(3, 'Windstorm', 'confused' ),
-    new Hero(4, 'Magneta')
+    new Hero(1, 'Lamp', 'bright'),
+    new Hero(2, 'Phone', 'slim' ),
+    new Hero(3, 'Television', 'vintage' ),
+    new Hero(4, 'Fishbowl')
   ];
 
 

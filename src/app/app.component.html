@@ -34,7 +34,6 @@ bindon-ngModel
 <p>currentClasses is {{currentClasses | json}}</p>
 <div [ngClass]="currentClasses">This div is initially saveable, unchanged, and special</div>
 
-not used in chapter
 <br>
 <label>saveable   <input type="checkbox" [(ngModel)]="canSave"></label> |
 <label>modified:  <input type="checkbox" [value]="!isUnchanged" (change)="isUnchanged=!isUnchanged"></label> |
@@ -66,7 +65,7 @@ not used in chapter
   This div is initially italic, normal weight, and extra large (24px).
 </div>
 
-<!-- not used in chapter -->
+
 <br>
 <label>italic: <input type="checkbox" [(ngModel)]="canSave"></label> |
 <label>normal: <input type="checkbox" [(ngModel)]="isUnchanged"></label> |
@@ -83,65 +82,61 @@ not used in chapter
 <hr>
 <h2>Built-in structural directives</h2>
 <h3 id="ngIf">NgIf Binding</h3>
-<p>If isActive is true, app-item-detail will render: </p>
-<app-item-detail *ngIf="isActive"></app-item-detail>
-<button (click)="isActiveToggle()">Toggle app-item-detail</button>
+<div>
+  <p>If isActive is true, app-item-detail will render: </p>
+  <app-item-detail *ngIf="isActive"></app-item-detail>
+  <button (click)="isActiveToggle()">Toggle app-item-detail</button>
+</div>
+<p>If currentCustomer isn't null, say hello to Laura:</p>
+<div *ngIf="currentCustomer">Hello, {{currentCustomer.name}}</div>
+  <p>nullCustomer is null by default. NgIf guards against null. Give it a value to show it:</p>
+<div *ngIf="nullCustomer">Hello, <span>{{nullCustomer}}</span></div>
+<button (click)="giveNullCustomerValue()">Give nullCustomer a value</button>
 
-<div *ngIf="currentItem">Hello, {{currentItem.name}}</div>
-<div *ngIf="nullItem">Hello!!!<span>{{nullItem}}</span></div>
-<button (click)="giveNullItemValue()">Give nullItem a value</button>
 
-<!-- NgIf binding with template (no *) -->
+<h4>NgIf binding with template (no *)</h4>
 
 <ng-template [ngIf]="currentItem">Add {{currentItem.name}} with template</ng-template>
+<hr>
 
-<!-- Does not show because isActive is false! -->
-<!-- <div>Hero Detail removed from DOM (via template) because isActive is false</div>
-<ng-template [ngIf]="isActive">
-  <app-hero-detail></app-hero-detail>
-</ng-template> -->
-
+<h4>Show/hide vs. NgIf</h4>
 <!-- isSpecial is true -->
-<!-- <div [class.hidden]="!isSpecial">Show with class</div>
-<div [class.hidden]="isSpecial">Hide with class</div> -->
+<div [class.hidden]="!isSpecial">Show with class</div>
+<div [class.hidden]="isSpecial">Hide with class</div>
 
-<!-- HeroDetail is in the DOM but hidden -->
-<!-- <app-hero-detail [class.hidden]="isSpecial"></app-hero-detail>
+<p>ItemDetail is in the DOM but hidden</p>
+<app-item-detail [class.hidden]="isSpecial"></app-item-detail>
 
 <div [style.display]="isSpecial ? 'block' : 'none'">Show with style</div>
 <div [style.display]="isSpecial ? 'none'  : 'block'">Hide with style</div>
 
-<a class="to-toc" href="#toc">top</a> -->
 
-<!-- NgFor binding -->
-<!-- <hr><h2 id="ngFor">NgFor Binding</h2>
+<hr>
+<h2 id="ngFor">NgFor Binding</h2>
 
 <div class="box">
-  <div *ngFor="let hero of heroes">{{hero.name}}</div>
+  <div *ngFor="let item of items">{{item.name}}</div>
 </div>
 <br>
 
-<div class="box"> -->
-  <!-- *ngFor w/ hero-detail Component -->
-  <!-- <app-hero-detail *ngFor="let hero of heroes" [hero]="hero"></app-hero-detail>
-</div> -->
+<div class="box">
+  *ngFor with ItemDetailComponent element
+ <app-item-detail *ngFor="let item of items" [item]="item"></app-item-detail>
+</div>
 
-<!-- <a class="to-toc" href="#toc">top</a>
 
 <h4 id="ngFor-index">*ngFor with index</h4>
 <p>with <i>semi-colon</i> separator</p>
 <div class="box">
   <div *ngFor="let hero of heroes; let i=index">{{i + 1}} - {{hero.name}}</div>
-</div> -->
+</div>
 
-<!-- <p>with <i>comma</i> separator</p>
-<div class="box"> -->
-  <!-- Ex: "1 - Hercules" -->
-  <!-- <div *ngFor="let hero of heroes, let i=index">{{i + 1}} - {{hero.name}}</div>
-</div> -->
-<!--
-<a class="to-toc" href="#toc">top</a>
+<p>with <i>comma</i> separator</p>
+<div class="box">
+ <div *ngFor="let hero of heroes, let i=index">{{i + 1}} - {{hero.name}}</div>
+</div>
 
+<h1>******</h1>
 <h4 id="ngFor-trackBy">*ngFor trackBy</h4>
 <button (click)="resetHeroes()">Reset heroes</button>
 <button (click)="changeIds()">Change ids</button>
@@ -155,6 +150,7 @@ not used in chapter
     Hero DOM elements change #{{heroesNoTrackByCount}} without trackBy
   </div>
 </div>
+
 
 <p>with trackBy</p>
 <div class="box">
@@ -177,8 +173,8 @@ not used in chapter
 <p>with trackBy and <i>comma</i> separator</p>
 <div class="box">
   <div *ngFor="let hero of heroes, trackBy: trackByHeroes">({{hero.id}}) {{hero.name}}</div>
-</div> -->
-<!--
+</div>
+
 <p>with trackBy and <i>space</i> separator</p>
 <div class="box">
   <div *ngFor="let hero of heroes trackBy: trackByHeroes">({{hero.id}}) {{hero.name}}</div>
@@ -189,10 +185,7 @@ not used in chapter
   <div *ngFor="let hero of heroes, trackBy: trackById">({{hero.id}}) {{hero.name}}</div>
 </div>
 
-<a class="to-toc" href="#toc">top</a> -->
-
-<!-- NgSwitch binding -->
-<!-- <hr><h2 id="ngSwitch">NgSwitch Binding</h2>
+<hr><h2>NgSwitch Binding</h2>
 
 <p>Pick your favorite hero</p>
 <div>
@@ -209,4 +202,3 @@ not used in chapter
   <app-unknown-hero  *ngSwitchDefault           [hero]="currentHero"></app-unknown-hero>
 </div>
 
-<a class="to-toc" href="#toc">top</a> -->

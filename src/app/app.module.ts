@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ItemDetailComponent } from './item-detail/item-detail.component';
+import { heroSwitchComponents } from './hero-switch.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemDetailComponent
+    ItemDetailComponent,
+    heroSwitchComponents
   ],
   imports: [
     BrowserModule,

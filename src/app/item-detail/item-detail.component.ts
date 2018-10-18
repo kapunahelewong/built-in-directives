@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Items } from '../items';
+
+import { Hero } from '../hero';
 
 @Component({
   selector: 'app-item-detail',
@@ -6,6 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-detail.component.css']
 })
 export class ItemDetailComponent implements OnInit {
+
+
+  @Input() item: Items;
+  @Input() hero: Hero;
 
   constructor() { }
 
