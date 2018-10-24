@@ -1,8 +1,8 @@
-export class Hero {
+export class Item {
   static nextId = 0;
 
-  static heroes: Hero[] = [
-    new Hero(
+  static items: Item[] = [
+    new Item(
       null,
       'Teapot',
       'short and stout',
@@ -10,10 +10,10 @@ export class Hero {
       'http://www.imdb.com/title/tt0065832/',
       325
     ),
-    new Hero(1, 'Lamp', 'bright'),
-    new Hero(2, 'Phone', 'slim' ),
-    new Hero(3, 'Television', 'vintage' ),
-    new Hero(4, 'Fishbowl')
+    new Item(1, 'Lamp', 'bright'),
+    new Item(2, 'Phone', 'slim' ),
+    new Item(3, 'Television', 'vintage' ),
+    new Item(4, 'Fishbowl')
   ];
 
 
@@ -25,10 +25,10 @@ export class Hero {
     public url?: string,
     public rate = 100,
     ) {
-    this.id = id ? id : Hero.nextId++;
+    this.id = id ? id : Item.nextId++;
   }
 
-  clone(): Hero {
-    return Object.assign(new Hero(), this);
+  clone(): Item {
+    return Object.assign(new Item(), this);
   }
 }

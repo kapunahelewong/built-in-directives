@@ -1,28 +1,36 @@
 import { Component, Input } from '@angular/core';
-import { Hero } from './hero';
+import { Item } from './hero';
+
+// @Component({
+//   selector: 'app-stout-item',
+//   template: `Wow. You like {{item.name}}. What a happy hero ... just like you.`
+// })
+// export class StoutItemComponent {
+//   @Input() item: Item;
+// }
 
 @Component({
   selector: 'app-happy-hero',
-  template: `Wow. You like {{hero.name}}. What a happy hero ... just like you.`
+  template: `Wow. You like {{item.name}}. What a happy hero ... just like you.`
 })
 export class HappyHeroComponent {
-  @Input() hero: Hero;
+  @Input() item: Item;
 }
 
 @Component({
   selector: 'app-sad-hero',
-  template: `You like {{hero.name}}? Such a sad hero. Are you sad too?`
+  template: `You like {{item.name}}? Such a sad hero. Are you sad too?`
 })
 export class SadHeroComponent {
-  @Input() hero: Hero;
+  @Input() item: Item;
 }
 
 @Component({
   selector: 'app-confused-hero',
-  template: `Are you as confused as {{hero.name}}?`
+  template: `Are you as confused as {{item.name}}?`
 })
 export class ConfusedHeroComponent {
-  @Input() hero: Hero;
+  @Input() item: Item;
 }
 
 @Component({
@@ -30,10 +38,10 @@ export class ConfusedHeroComponent {
   template: `{{message}}`
 })
 export class UnknownHeroComponent {
-  @Input() hero: Hero;
+  @Input() item: Item;
   get message() {
-    return this.hero && this.hero.name ?
-      `${this.hero.name} is strange and mysterious.` :
+    return this.item && this.item.name ?
+      `${this.item.name} is strange and mysterious.` :
       'Are you feeling indecisive?';
   }
 }
