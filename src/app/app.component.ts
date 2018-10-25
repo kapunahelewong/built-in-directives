@@ -63,6 +63,7 @@ export class AppComponent implements OnInit {
 
   isActiveToggle() {
     this.isActive = !this.isActive;
+    console.log("method works");
   }
 
   giveNullCustomerValue() {

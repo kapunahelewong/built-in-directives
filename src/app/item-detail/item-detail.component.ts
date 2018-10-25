@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Items } from '../items';
 
 import { Item } from '../item';
 
@@ -11,12 +10,12 @@ import { Item } from '../item';
 export class ItemDetailComponent implements OnInit {
 
 
-  // @Input() item: Items;
   @Input() item: Item;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.item);
   }
 
 }

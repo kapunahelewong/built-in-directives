@@ -5,10 +5,7 @@ export class Item {
     new Item(
       null,
       'Teapot',
-      'short and stout',
-      new Date(1895, 1, 25),
-      'http://www.imdb.com/title/tt0065832/',
-      325
+      'short and stout'
     ),
     new Item(1, 'Lamp', 'bright'),
     new Item(2, 'Phone', 'slim' ),
@@ -21,7 +18,6 @@ export class Item {
     public id?: number,
     public name?: string,
     public emotion?: string,
-    public creationDate?: Date,
     public url?: string,
     public rate = 100,
     ) {
