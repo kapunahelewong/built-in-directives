@@ -17,7 +17,7 @@ export class Item {
   constructor(
     public id?: number,
     public name?: string,
-    public emotion?: string,
+    public feature?: string,
     public url?: string,
     public rate = 100,
     ) {

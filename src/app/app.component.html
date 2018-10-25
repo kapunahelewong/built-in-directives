@@ -192,7 +192,7 @@ bindon-ngModel
 </div>
 
 
-<div [ngSwitch]="currentItem.emotion">
+<div [ngSwitch]="currentItem.feature">
   <app-stout-item    *ngSwitchCase="'short and stout'"    [item]="currentItem"></app-stout-item>
   <app-best-item    *ngSwitchCase="'bright'"    [item]="currentItem"></app-best-item>
   <app-device-item      *ngSwitchCase="'slim'"      [item]="currentItem"></app-device-item>
