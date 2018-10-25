@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Item } from './hero';
+import { Item } from './item';
 
 // @Component({
 //   selector: 'app-stout-item',
@@ -10,34 +10,34 @@ import { Item } from './hero';
 // }
 
 @Component({
-  selector: 'app-happy-hero',
-  template: `Wow. You like {{item.name}}. What a happy hero ... just like you.`
+  selector: 'app-happy-item',
+  template: `Wow. You like {{item.name}}. What a happy item ... just like you.`
 })
-export class HappyHeroComponent {
+export class HappyItemComponent {
   @Input() item: Item;
 }
 
 @Component({
-  selector: 'app-sad-hero',
-  template: `You like {{item.name}}? Such a sad hero. Are you sad too?`
+  selector: 'app-sad-item',
+  template: `You like {{item.name}}? Such a sad item. Are you sad too?`
 })
-export class SadHeroComponent {
+export class SadItemComponent {
   @Input() item: Item;
 }
 
 @Component({
-  selector: 'app-confused-hero',
+  selector: 'app-confused-item',
   template: `Are you as confused as {{item.name}}?`
 })
-export class ConfusedHeroComponent {
+export class ConfusedItemComponent {
   @Input() item: Item;
 }
 
 @Component({
-  selector: 'app-unknown-hero',
+  selector: 'app-unknown-item',
   template: `{{message}}`
 })
-export class UnknownHeroComponent {
+export class UnknownItemComponent {
   @Input() item: Item;
   get message() {
     return this.item && this.item.name ?
@@ -47,4 +47,4 @@ export class UnknownHeroComponent {
 }
 
 export const heroSwitchComponents =
-  [ HappyHeroComponent, SadHeroComponent, ConfusedHeroComponent, UnknownHeroComponent ];
+  [ HappyItemComponent, SadItemComponent, ConfusedItemComponent, UnknownItemComponent ];

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Items } from './items';
-import { Item } from './hero';
+import { Item } from './item';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +14,6 @@ export class AppComponent implements OnInit {
 
   currentClasses: {};
   currentStyles: {};
-  // currentItems = {
-  //   name: 'Lamp'
-  // };
-
-
   isActive = true;
   nullCustomer = null;
   currentCustomer = {
@@ -33,10 +27,10 @@ export class AppComponent implements OnInit {
 
 
   // trackBy change counting
-  heroesNoTrackByCount   = 0;
-  heroesWithTrackByCount = 0;
-  heroesWithTrackByCountReset = 0;
-  heroIdIncrement = 1;
+  itemsNoTrackByCount   = 0;
+  itemsWithTrackByCount = 0;
+  itemsWithTrackByCountReset = 0;
+  itemIdIncrement = 1;
 
   ngOnInit() {
     this.resetItems();
@@ -86,21 +80,21 @@ export class AppComponent implements OnInit {
     this.items = Item.items.map(item => item.clone());
     this.currentItem = this.items[0];
     this.item = this.currentItem;
-    this.heroesWithTrackByCountReset = 0;
+    this.itemsWithTrackByCountReset = 0;
   }
 
   changeIds() {
     this.resetItems();
-    this.items.forEach(h => h.id += 10 * this.heroIdIncrement++);
-    this.heroesWithTrackByCountReset = -1;
+    this.items.forEach(h => h.id += 10 * this.itemIdIncrement++);
+    this.itemsWithTrackByCountReset = -1;
   }
 
   clearTrackByCounts() {
-    const trackByCountReset = this.heroesWithTrackByCountReset;
+    const trackByCountReset = this.itemsWithTrackByCountReset;
     this.resetItems();
-    this.heroesNoTrackByCount = -1;
-    this.heroesWithTrackByCount = trackByCountReset;
-    this.heroIdIncrement = 1;
+    this.itemsNoTrackByCount = -1;
+    this.itemsWithTrackByCount = trackByCountReset;
+    this.itemIdIncrement = 1;
   }
 
   trackByItems(index: number, item: Item): number { return item.id; }

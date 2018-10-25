@@ -6,7 +6,7 @@ export class Item {
       null,
       'Teapot',
       'short and stout',
-      new Date(1970, 1, 25),
+      new Date(1895, 1, 25),
       'http://www.imdb.com/title/tt0065832/',
       325
     ),
@@ -21,7 +21,7 @@ export class Item {
     public id?: number,
     public name?: string,
     public emotion?: string,
-    public birthdate?: Date,
+    public creationDate?: Date,
     public url?: string,
     public rate = 100,
     ) {

@@ -45,12 +45,12 @@ img {
 	font-weight: bold;
 }
 
-.special {
+.course {
 	font-weight: bold;
 	font-size: x-large;
 }
 
-.bad {
+.helpful {
 	color: red;
 }
 
@@ -58,7 +58,7 @@ img {
 	color: limegreen;
 }
 
-.curly,
+.study,
 .modified {
 	font-family: "Brush Script MT"
 }
@@ -68,11 +68,6 @@ img {
 	font-style: italic;
 }
 
-little-hero {
-	color: blue;
-	font-size: smaller;
-	background-color: Turquoise;
-}
 
 .to-toc {
 	margin-top: 10px;

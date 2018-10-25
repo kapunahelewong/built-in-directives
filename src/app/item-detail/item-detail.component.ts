@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Items } from '../items';
 
-import { Hero } from '../hero';
+import { Item } from '../item';
 
 @Component({
   selector: 'app-item-detail',
@@ -11,8 +11,8 @@ import { Hero } from '../hero';
 export class ItemDetailComponent implements OnInit {
 
 
-  @Input() item: Items;
-  @Input() hero: Hero;
+  // @Input() item: Items;
+  @Input() item: Item;
 
   constructor() { }
 
