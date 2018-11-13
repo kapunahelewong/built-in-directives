@@ -82,7 +82,7 @@ bindon-ngModel
 <h3 id="ngIf">NgIf Binding</h3>
 <div>
   <p>If isActive is true, app-item-detail will render: </p>
-  <app-item-detail *ngIf="isActive"></app-item-detail>
+  <app-item-detail *ngIf="isActive" [item]="item"></app-item-detail>
   <button (click)="isActiveToggle()">Toggle app-item-detail</button>
 </div>
 <p>If currentCustomer isn't null, say hello to Laura:</p>
